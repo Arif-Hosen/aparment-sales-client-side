@@ -13,6 +13,9 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import Navigation from '../../Shared/Navigation/Navigation';
 import Banner from './../Banner/Banner';
+import Footer from '../../Shared/Footer/Footer';
+import ShortDescription from '../ShortDescription/ShortDescription';
+import Apparments from '../Appartment/Apparments';
 
 const Home = () => {
 
@@ -23,16 +26,9 @@ const Home = () => {
         <div>
             <Navigation></Navigation>
             <Banner></Banner>
-            <h1 style={{ color: '#005E9E' }}>THIS is HOMEN</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas tempora non illum praesentium accusantium eius magnam nisi, inventore molestias, et ad, provident doloribus? Rem dolorem, adipisci officiis provident neque porro!</p>
-            <Typography style={{ color: '#005E9E', fontFamily: 'Playfair' }} variant='h1'>Hello</Typography>
-            <Button color="secondary">Secondary</Button>
-            <Button variant="contained" color="success">
-                Success
-            </Button>
-            <Button variant="outlined" color="error">
-                Error
-            </Button>
+            <Apparments></Apparments>
+            <ShortDescription></ShortDescription>
+            <Footer></Footer>
 
 
         </div >

@@ -1,0 +1,17 @@
+.login{
+    background-image:linear-gradient(0deg, rgba(11, 9, 24, 0.589), rgba(11, 9, 24, 0.589)), url("https://img.freepik.com/free-photo/real-estate-with-house-model-keys_1150-17814.jpg?t=st=1647010826~exp=1647011426~hmac=2b72d9871cc4ad87cec36c1426cde4991ac747546030cd1e9d5347d3e85afebd&w=740"); 
+    background-color: #cccccc; 
+    height: 600px;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.login-form{
+    background-color: #c7caccef ;
+    padding: 30px;
+    width: 380px;
+    height: 350px;
+    border-radius: 5px;
+    border: 1px solid royalblue;
+}

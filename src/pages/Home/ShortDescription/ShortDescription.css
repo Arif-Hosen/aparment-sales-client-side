@@ -1,0 +1,32 @@
+.shortDescription-container{
+    background-image: url('https://img.freepik.com/free-psd/poster-frame-living-room_1150-52911.jpg?size=626&ext=jpg&ga=GA1.2.1579092123.1625150646');
+    background-size:cover;
+    background-position: center;
+    height: 500px;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.short-text{
+    background-color: #005E9E;
+    width: 450px;
+    color: aliceblue;
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 5%;
+    text-align: center;
+    border-radius: 3px;
+    
+}
+.short-card{
+    text-align: center;
+    padding: 5px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+    backdrop-filter: blur(5px);
+}
