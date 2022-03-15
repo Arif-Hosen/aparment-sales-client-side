@@ -26,7 +26,7 @@ const useFirebase = () => {
                 const newUser = { email, displayName: name }
                 setUser(newUser);
                 // save user to databse
-                // saveUser(email, name, 'POST')
+                saveUser(email, name, 'POST')
                 // send name to firebase after creation
                 updateProfile(auth.currentUser, {
                     displayName: name
@@ -98,6 +98,31 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
+    // load users  data to check admin in userCollection (user must be have users db)
+    useEffect(() => {
+        fetch(`http://localhost:5000/user/${user.email}`)
+            .then(res => res.json())
+            .then(data => {
+                setAdmin(data.admin)
+
+            })
+
+    }, [user.email])
+
+    // save user to database when user registered
+    const saveUser = (email, displayName, method) => {
+        // object property and its variable of value is same
+        const user = { email, displayName };
+        // console.log('test', user);
+        fetch('http://localhost:5000/users', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then()
+    }
     return {
         user,
         isLoading,

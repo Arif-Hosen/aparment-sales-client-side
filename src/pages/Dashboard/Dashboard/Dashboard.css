@@ -1,0 +1,10 @@
+.list-item{
+    text-decoration: none;
+    font-weight: 800;
+    font-family: Playfair;
+    color: white;
+}
+.list{
+    background-color: #005E9E;
+    color: white;
+}

@@ -11,6 +11,7 @@ import AuthProvider from './Context/AuthProvider/AuthProvider';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import MoreApartments from './pages/MoreApartments/MoreApartments';
 import PlaceBooking from './pages/PlaceBooking/PlaceBooking';
+import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 
 // color: #005E9E
 // font-family:Playfair Display, Sans-serif
@@ -37,6 +38,9 @@ function App() {
             </Route>
             <Route path='/register'>
               <Register></Register>
+            </Route>
+            <Route path='/dashboard'>
+              <Dashboard></Dashboard>
             </Route>
             <PrivateRoute path='/placebooking/:id'>
               <PlaceBooking></PlaceBooking>

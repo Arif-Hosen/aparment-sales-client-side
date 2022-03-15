@@ -16,7 +16,7 @@ import useAuth from '../../../Hooks/useAuth';
 
 const Navigation = () => {
     const { user, logOut } = useAuth();
-    const pages = ['HOME', 'APARTMENTS', 'Blog'];
+    const pages = ['HOME', 'APARTMENTS', 'DASHBOARD'];
     const settings = [user.email, 'Account', 'Dashboard', 'Logout'];
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -152,7 +152,7 @@ const Navigation = () => {
 
                                         </MenuItem>
                                         <MenuItem key={user.email} onClick={handleCloseUserMenu} >
-                                            <Link to='/dashbaord' style={{ color: '#005E9E', textDecoration: 'none' }}>
+                                            <Link to='/dashboard' style={{ color: '#005E9E', textDecoration: 'none' }}>
                                                 <Typography sx={{ fontWeight: 700, fontFamily: 'playfair' }} textAlign="center">Dashboard</Typography>
                                             </Link>
 

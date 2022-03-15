@@ -1,4 +1,4 @@
-import { Card, CardContent, CardMedia, Grid, TextField, Typography } from '@mui/material';
+import { Alert, Card, CardContent, CardMedia, Grid, TextField, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Footer from '../Shared/Footer/Footer';
@@ -11,6 +11,7 @@ const PlaceBooking = () => {
     const { user } = useAuth();
 
     const [apartment, setApartment] = useState();
+    const [success, setSuccess] = useState(false);
 
     const initialInfo = { name: user?.displayName, email: user?.email, phone: '', address: '' };
 
@@ -27,19 +28,24 @@ const PlaceBooking = () => {
 
     }
 
+    // get specific apartment by id
     useEffect(() => {
         fetch(`http://localhost:5000/apartments/${id}`)
             .then(res => res.json())
             .then(data => setApartment(data))
     }, [])
 
+
+    // form submit
     const handleOnSubmit = e => {
         e.preventDefault();
 
+        // copy userInfo data and add another info
         const booking = {
             ...userInfo,
             apartmentName: apartment?.name, apartmentId: apartment?._id, status: 'pending'
         }
+        // post booking data to booking db
         fetch('http://localhost:5000/placebooking', {
             method: 'POST',
             headers: {
@@ -48,7 +54,11 @@ const PlaceBooking = () => {
             body: JSON.stringify(booking)
         })
             .then(res => res.json())
-            .then(data => console.log('data', data))
+            .then(data => {
+                if(data?.insertedId){
+setSuccess(true);
+                }
+            })
     }
 
     return (
@@ -115,7 +125,11 @@ const PlaceBooking = () => {
                                     style={{ backgroundColor: '#005E9E' }} variant='contained' sx={{ width: '100%', fontWeight: 700, my: 3 }}>Place Booking</Button>
 
                             </form>
+{
+    // after place booking , show success
+    success &&<Alert severity="success">Your booking successfully placed!</Alert>
 
+}
                         </Card>
                     </Grid>
                 </Grid>
