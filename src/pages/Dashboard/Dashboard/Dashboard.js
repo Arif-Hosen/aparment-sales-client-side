@@ -25,6 +25,8 @@ import ManageBooking from '../ManageBookings/ManageBooking';
 import AddApartment from '../AddApartment/AddApartment';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import useAuth from '../../../Hooks/useAuth';
+import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+import ManageApartment from '../ManageApartment/ManageApartment';
 
 
 const drawerWidth = 240;
@@ -34,6 +36,7 @@ function ResponsiveDrawer(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
+    // useRouteMatch react router hook contains the path (which is set in Route) and url (set in Link)
     const { path, url } = useRouteMatch();
     // console.log('path', path, 'url', url);
 
@@ -97,6 +100,12 @@ function ResponsiveDrawer(props) {
                     <ListItem button key={'text'}>
                         <Link className='list-item' to={`${path}/addapartment`}>
                             <ListItemText >Add Apartment</ListItemText>
+                        </Link>
+                    </ListItem>
+                    <Divider />
+                    <ListItem button key={'text'}>
+                        <Link className='list-item' to={`${path}/manageapartment`}>
+                            <ListItemText >Manage Apartment</ListItemText>
                         </Link>
                     </ListItem>
                     <Divider />
@@ -205,15 +214,18 @@ function ResponsiveDrawer(props) {
                     <Route path={`${path}/payment`}>
                         <Payment></Payment>
                     </Route>
-                    <Route path={`${path}/managebooking`}>
+                    <AdminRoute path={`${path}/managebooking`}>
                         <ManageBooking></ManageBooking>
-                    </Route>
-                    <Route path={`${path}/addapartment`}>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/addapartment`}>
                         <AddApartment></AddApartment>
-                    </Route>
-                    <Route path={`${path}/makeadmin`}>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manageapartment`}>
+                        <ManageApartment></ManageApartment>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/makeadmin`}>
                         <MakeAdmin></MakeAdmin>
-                    </Route>
+                    </AdminRoute>
                 </Switch>
             </Box >
         </Box >

@@ -6,7 +6,6 @@ import { Route, Switch } from 'react-router-dom';
 import Login from './pages/Login/Login/Login';
 import Register from './pages/Login/Register/Register';
 import NotFound from './pages/NotFound/NotFound';
-import Apparments from './pages/Home/Appartment/Apparments';
 import AuthProvider from './Context/AuthProvider/AuthProvider';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import MoreApartments from './pages/MoreApartments/MoreApartments';
@@ -39,9 +38,9 @@ function App() {
             <Route path='/register'>
               <Register></Register>
             </Route>
-            <Route path='/dashboard'>
+            <PrivateRoute path='/dashboard'>
               <Dashboard></Dashboard>
-            </Route>
+            </PrivateRoute>
             <PrivateRoute path='/placebooking/:id'>
               <PlaceBooking></PlaceBooking>
             </PrivateRoute>

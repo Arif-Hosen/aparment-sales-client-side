@@ -1,5 +1,5 @@
 .banner{
-    background-image: url("https://img.freepik.com/free-photo/shiny-night-city_1127-8.jpg?t=st=1646725073~exp=1646725673~hmac=54dd42b6a7cc34135f5b8c83834a31e26ba7ff868d37ed43817478900833c461&w=740");
+    background-image:linear-gradient(0deg, rgba(10, 10, 10, 0.575), rgba(17, 14, 16, 0.452)), url("https://img.freepik.com/free-photo/portrait-happy-asian-young-family-bought-new-house-japanese-little-preschool-daughter-with-parents-mother-father-holds-hand-keys-sitting-sofa-living-room-smiling-looking-camera_7861-2314.jpg?size=626&ext=jpg&ga=GA1.1.1579092123.1625150646");
     height:600px;
     margin-top: 65px;
     background-position: center;
@@ -13,6 +13,7 @@
 /* #5c5c5ca9 */
 .banner-text{
     /* background-color:  #7393b3b2; */
+    margin-top: 150px;
     padding: 20px;
     border-radius: 5px;
     
@@ -20,9 +21,10 @@
 
 .banner-link a{
     text-decoration: none;
+    /* color:#005E9E; */
     color:darkorange;
     font-weight: 800;
     font-size: 40px;
     margin-right: 30px;
-    background-color:#5c5c5ca9 ;
+    /* background-color:#f7f3f359 ; */
 }

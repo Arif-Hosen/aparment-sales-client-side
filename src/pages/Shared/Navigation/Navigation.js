@@ -13,6 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
+import './Navigation.css';
 
 const Navigation = () => {
     const { user, logOut } = useAuth();
@@ -45,13 +46,16 @@ const Navigation = () => {
                     < Toolbar disableGutters>
 
                         <Link to='/' style={{ textDecoration: 'none', color: 'white' }}>
+                            <img className='project-logo' alt="" src="https://st.depositphotos.com/2808409/3926/v/380/depositphotos_39264255-stock-illustration-flat-house-icon-background.jpg?forcejpeg=true" />
+                        </Link>
+                        <Link to='/' style={{ textDecoration: 'none', color: 'white' }}>
                             <Typography
                                 style={{ fontFamily: 'playfair' }}
                                 variant="h6"
                                 noWrap
                                 component="div"
                                 sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-                            >MY HOME</Typography></Link>
+                            > MY HOME</Typography></Link>
 
 
                         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -101,8 +105,8 @@ const Navigation = () => {
                             noWrap
                             component="div"
                             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-                        >
-                            <Link to='/' style={{ textDecoration: 'none', color: 'white' }}>MY HOME</Link>
+                        ><Avatar alt='df' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm8_Sf5uY6WMZyPDFUvB0PQBGxLH0ILbJXSQ&usqp=CAU" />
+                            <Link to='/' style={{ textDecoration: 'none', color: 'white' }}> MY HOME</Link>
                         </Typography>
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
 
@@ -122,11 +126,13 @@ const Navigation = () => {
 
                         <Box sx={{ flexGrow: 0 }}>
 
-                            {!user?.email ? <Link to='/login' style={{ textDecoration: 'none', color: 'white' }}>Login</Link>
+                            {!user?.email ? <Link to='/login' style={{ textDecoration: 'none', color: 'white' }}>Login </Link>
                                 :
                                 <> <Tooltip title="Open settings">
                                     <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                        <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                                        <Avatar alt="Remy Sharp" src="" />
+
+
                                     </IconButton>
                                 </Tooltip>
                                     <Menu

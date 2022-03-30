@@ -17,8 +17,8 @@ const Banner = () => {
                     <a href="">Sales</a>
                 </div>
                 <div style={{ backgroundColor: '#5c5c5ca9', padding: '10px', borderRadius: '5px' }}>
-                    <input style={{ height: '35px', width: '80%', backgroundColor: 'white', borderRadius: '5px' }} type="text" />
-                    <Button variant="contained">Contained</Button>
+                    <input style={{ height: '35px', width: '80%', backgroundColor: 'white', borderRadius: '5px' }} type="text" placeholder='search apartment by area' />
+                    <Button variant="contained">Search</Button>
                 </div>
             </div>
 
