@@ -1,0 +1,1 @@
+1/ using bookmark system for user, user can bookmark a apartment. see the bookmark list
