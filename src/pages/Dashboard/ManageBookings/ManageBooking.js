@@ -7,9 +7,11 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Grid } from '@mui/material';
 import useAuth from '../../../Hooks/useAuth';
+import './ManageBooking.css';
 
 const ManageBooking = () => {
     const [allBooking, setAllBooking] = useState([]);
+    const [apartments,setApartments]=useState([]);
     const { user } = useAuth();
 
     useEffect(() => {
@@ -18,23 +20,40 @@ const ManageBooking = () => {
             .then(res => res.json())
             .then(data => setAllBooking(data))
     }, [])
+
+    // load apartment data from db
+    useEffect(()=>{
+        fetch('http://localhost:5000/apartments')
+        .then(res=>res.json())
+        .then(data=>setApartments(data))
+    },[])
+
+    
     return (
         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
             {
                 allBooking.map(booking => <Grid item xs={2} sm={4} md={4} >
-                    <Card sx={{ maxWidth: 345, maxHeight: 300 }}>
+                    <Card className='custom-card' sx={{ maxWidth: 345, maxHeight: 300 }}>
 
                         <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
+                                <Typography className='apartment-name' gutterBottom variant="body1" component="div">
                                 {booking?.apartmentName}
                             </Typography>
+                            
+                            <Typography variant='body2'>Order ID: {booking?._id}</Typography>
+<Typography variant='body'>Customer Info</Typography>
                             <Typography variant="body2" color="text.secondary">
-                                {booking?.email} {booking?.phone}
+                               Email: {booking?.email}
                             </Typography>
+                           
+                            <Typography variant="body2" color="text.secondary">
+                               Phone: {booking?.phone}
+                            </Typography>
+                           
                         </CardContent>
                         <CardActions>
-                            <Button size="small">{booking?.status}</Button>
-                            <Button size="small">Cancel</Button>
+                            <Button className='pending-button' size="small">{booking?.status}</Button>
+                            <Button className='custom-button' size="small">Cancel</Button>
                         </CardActions>
                     </Card>
                 </Grid>)

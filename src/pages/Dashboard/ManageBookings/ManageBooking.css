@@ -1,0 +1,19 @@
+.custom-card {
+  
+    background-color:#182e3d0c !important;
+}
+.apartment-name{
+color: #005E9E !important;
+}
+
+.custom-button{
+    color:crimson !important;
+}
+.custom-button:hover{
+    background-color:darkorange !important;
+    color: aliceblue !important;
+}
+.pending-button:hover{
+    color: aliceblue !important;
+    background-color: #005E9E !important;
+}

@@ -105,7 +105,7 @@ const Navigation = () => {
                             noWrap
                             component="div"
                             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-                        ><Avatar alt='df' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm8_Sf5uY6WMZyPDFUvB0PQBGxLH0ILbJXSQ&usqp=CAU" />
+                        >
                             <Link to='/' style={{ textDecoration: 'none', color: 'white' }}> MY HOME</Link>
                         </Typography>
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
