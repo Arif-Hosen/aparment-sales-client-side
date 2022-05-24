@@ -74,16 +74,16 @@ function ResponsiveDrawer(props) {
                         </Link>
                     </ListItem>
                     <Divider />
-                    <ListItem button key={'text'}>
+                    <ListItem button key={'text'} >
 
 
                         <ListItemText className='list-item'>Log out</ListItemText>
 
                     </ListItem>
                     <Divider />
-                    <ListItem button key={'text'}>
-                        <Link className='list-item' to='/home'>
-                            <ListItemText >Go Home</ListItemText>
+                    <ListItem button key={'text'} className='goHome'>
+                        <Link className='list-item ' to='/home'>
+                            <ListItemText >Go to Home</ListItemText>
                         </Link>
                     </ListItem>
                     <Divider />
@@ -124,7 +124,7 @@ function ResponsiveDrawer(props) {
                     <Divider />
                     <ListItem button key={'text'}>
                         <Link className='list-item' to='/home'>
-                            <ListItemText >Go Home</ListItemText>
+                            <ListItemText >Go to Home</ListItemText>
                         </Link>
                     </ListItem>
                     <Divider />

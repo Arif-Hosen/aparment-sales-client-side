@@ -14,7 +14,7 @@ const MyOrder = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        const url = `http://localhost:5000/mybooking/${user.email}`
+        const url = `http://localhost:5000/mybooking/${user.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setMyBooking(data))
@@ -27,14 +27,14 @@ const MyOrder = () => {
             {
                 myBooking.map(booking => <Grid item xs={2} sm={4} md={4} >
                     <Card sx={{ maxWidth: 345, maxHeight: 300 }}>
-                        <CardMedia
+                    <CardMedia
                             component="img"
                             height="140"
-                            image="/static/images/cards/contemplative-reptile.jpg"
-                            alt="green iguana"
+                            image={booking?.img}
+                            alt="apartment pic"
                         />
                         <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
+                            <Typography gutterBottom variant="h6" component="div">
                                 {booking?.apartmentName}
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
@@ -42,8 +42,8 @@ const MyOrder = () => {
                             </Typography>
                         </CardContent>
                         <CardActions>
-                            <Button size="small">{booking?.status}</Button>
-                            <Button size="small">Cancel</Button>
+                            <Button size="small"><span style={{color:'black'}}>Status : </span> {booking?.status}</Button>
+                            <Button size="small">Cancel Booking</Button>
                         </CardActions>
                     </Card>
                 </Grid>)

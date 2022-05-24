@@ -43,7 +43,7 @@ const PlaceBooking = () => {
         // copy userInfo data and add another info
         const booking = {
             ...userInfo,
-            apartmentName: apartment?.name, apartmentId: apartment?._id, status: 'pending'
+            apartmentName: apartment?.name, apartmentId: apartment?._id, status: 'pending', img: apartment?.img
         }
         // post booking data to booking db
         fetch('http://localhost:5000/placebooking', {
