@@ -64,7 +64,7 @@ function ResponsiveDrawer(props) {
                     <ListItem button key={'text'}>
 
                         <Link className='list-item' to={`${path}/payment`}>
-                            <ListItemText ><i class="fa   fa-file-invoice-dollar"></i>Payment</ListItemText>
+                            <ListItemText ><i class="fa   fa-file-invoice-dollar"></i> Payment</ListItemText>
                         </Link>
                     </ListItem>
                     <Divider />
